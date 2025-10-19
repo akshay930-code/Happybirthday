@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday!</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    overflow: hidden;
+  }
+
+  .birthday-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 5vh 5vw;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+    max-width: 90%;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  h1 {
+    font-size: 3.5vw;
+    margin-bottom: 2vh;
+    color: #ffeb3b;
+    text-shadow: 0 0 15px #f50057;
+  }
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 1.5vh;
+  }
+
+  button {
+    padding: 1vh 2.5vw;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ff4081;
+    color: white;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #f50057;
+    transform: scale(1.05);
+  }
+
+  /* Mobile adjustments */
+  @media(max-width:768px){
+    h1 { font-size: 6vw; }
+    p { font-size: 1em; }
+    .birthday-card { padding: 8vw 5vw; }
+    button { padding: 2vh 4vw; font-size: 1em; }
+  }
+
+  @media(max-width:480px){
+    h1 { font-size: 7vw; }
+    p { font-size: 0.95em; }
+    .birthday-card { padding: 10vw 5vw; }
+    button { padding: 2.5vh 5vw; font-size: 0.95em; }
+  }
+</style>
+</head>
+<body>
+  <div class="birthday-card">
+    <h1>🎉 Happy Birthday, Raj Aryan! 🎉</h1>
+    <p>Wishing you a day full of laughter, love, and happiness! 💖</p>
+    <p>You make everyone’s life brighter just by being in it! 🌟</p>
+    <button onclick="openSurprise()">Click for a Surprise!</button>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_16c56b7317.mp3?filename=happy-birthday-to-you-16323.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function openSurprise() {
+      const music = document.getElementById("bgMusic");
+      music.play().catch(() => {
+        alert("Please click 'Play' on the next page to start music 🎵");
+      });
+      // Open the animated surprise page in new tab
+      window.open("surprise.html", "_blank");
+    }
+  </script>
+</body>
+</html>
